@@ -5,7 +5,6 @@
     android:id="@+id/home"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:clipToOutline="true"
     android:background="@drawable/home"
     tools:context=".MainActivity">
 
@@ -19,17 +18,80 @@
             android:layout_height="30dp"
             android:background="@drawable/menu_bar"
             android:id="@+id/menu_bar"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:clickable="true"/>
         <View
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:background="@drawable/search_icon"
             android:id="@+id/search_bar"
-            android:layout_toRightOf="@id/menu_bar"
-            android:layout_marginLeft="320dp"/>
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="5dp"
+            android:clickable="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/player_tray"
+        android:clickable="true"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/playing_song_image"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/playing_song_image"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/playing_song_name"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/playing_song_details"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true">
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:background="@drawable/skip"
+                android:id="@+id/previous_button"
+                android:clickable="true"/>
+            <View
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:background="@drawable/pause"
+                android:id="@+id/pause_button"/>
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="50dp"
+                android:clickable="true"
+                android:background="@drawable/next"
+                android:id="@+id/next_button"/>
 
 
+
+        </LinearLayout>
 
     </RelativeLayout>
+
+
+
+
+
 
 </RelativeLayout>
